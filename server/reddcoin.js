@@ -28,3 +28,9 @@ function refresh_transactions() {
         }
     });
 }
+
+Meteor.methods({
+    validate_address: function(address) {
+        return rdd.validate(address);
+    }
+})

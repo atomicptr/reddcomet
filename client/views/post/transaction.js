@@ -14,6 +14,18 @@ Template.transaction.helpers({
     address: function() {
         if(this.account) {
             return this.account;
+        } else {
+            var that = this;
+
+            Meteor.call('validate_address', this.address, function(err, info) {
+                Session.set('vaddress_' + that.address, info);
+            });
+
+            var vaddress = Session.get('vaddress_' + this.address);
+
+            if(vaddress.account) {
+                return vaddress.account;
+            }
         }
 
         return this.address;
