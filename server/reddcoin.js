@@ -3,17 +3,17 @@ var rdd = new reddcoin({
     pass: config.pass
 });
 
-refresh_wallet_collection();
-refresh_stake();
-refresh_blocks();
-refresh_transactions();
+// refresh before first interval
+refresh();
 
-Meteor.setInterval(function() {
+Meteor.setInterval(refresh, 5000);
+
+function refresh() {
     refresh_wallet_collection();
     refresh_stake();
     refresh_blocks();
     refresh_transactions();
-}, 5000);
+}
 
 function refresh_wallet_collection() {
     if(Wallet.findOne()) {
@@ -66,5 +66,13 @@ Meteor.methods({
 
     get_block: function(hash) {
         return rdd.block(hash);
+    },
+
+    unlock: function(passphrase, timeout, stakeonly) {
+        return rdd.unlock(passphrase, timeout, stakeonly);
+    },
+
+    refresh: function() {
+        refresh();
     }
 })

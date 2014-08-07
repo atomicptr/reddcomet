@@ -3,7 +3,7 @@ Template.layout.helpers({
         if(Wallet.findOne()) {
             var wallet = Wallet.findOne();
 
-            return wallet.locked;
+            return wallet.locked && wallet.encrypted;
         }
 
         return true;

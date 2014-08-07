@@ -1,4 +1,14 @@
 Template.dashboard.helpers({
+    islocked: function() {
+        if(Wallet.findOne()) {
+            var wallet = Wallet.findOne();
+
+            return wallet.locked && wallet.encrypted;
+        }
+
+        return true;
+    },
+
     balance: function() {
         if(Wallet.findOne()) {
             return Wallet.findOne().balance.toLocaleString();
