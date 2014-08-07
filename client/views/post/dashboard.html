@@ -1,0 +1,59 @@
+<template name="dashboard">
+    <!-- wallet panel -->
+    <div class="row">
+        <div class="col-md-8">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Wallet</div>
+
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <td>Balance</td><td>{{balance}} RDD</td>
+                        </tr>
+                        <tr>
+                            <td>Stake</td><td>{{stake}} RDD</td>
+                        </tr>
+                        <tr>
+                            <td>Unconfirmed</td><td>{{unconfirmed_balance}} RDD</td>
+                        </tr>
+                        <tr class="success">
+                            <td>Total</td><td>{{total_balance}} RDD</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ??? panel -->
+        <div class="col-md-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Panel</div>
+
+                <div class="panel-body">
+                    <p>fancy graph here</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Transactions</div>
+
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>&nbsp;</th><th>Type</th><th>Address</th><th>Amount</th><th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each transactions}}
+                            {{> transaction}}
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</template>

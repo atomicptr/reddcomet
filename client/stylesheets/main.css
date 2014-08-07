@@ -1,0 +1,40 @@
+body {
+    padding-top: 50px;
+}
+
+#navbar-icon {
+    width: 30px;
+    height: 30px;
+    margin-top: -5px;
+    margin-right: 5px;
+
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+.content {
+    margin-top: 50px;
+}
+
+.confirmed {
+    color: green;
+}
+
+.unconfirmed {
+    color: red;
+}
+
+.send {
+    color: red;
+    font-weight: bold;
+}
+
+.receive {
+    color: green;
+    font-weight: bold;
+}

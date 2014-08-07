@@ -1,0 +1,7 @@
+{
+  "packages": {
+    "iron-router": {},
+    "meteor-reddcoin": {},
+    "bootstrap-3": {}
+  }
+}

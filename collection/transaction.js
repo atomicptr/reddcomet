@@ -1,0 +1,1 @@
+Transaction = new Meteor.Collection("transaction");
