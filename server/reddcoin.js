@@ -5,11 +5,13 @@ var rdd = new reddcoin({
 
 refresh_wallet_collection();
 refresh_stake();
+refresh_blocks();
 refresh_transactions();
 
 Meteor.setInterval(function() {
     refresh_wallet_collection();
     refresh_stake();
+    refresh_blocks();
     refresh_transactions();
 }, 5000);
 
@@ -29,6 +31,18 @@ function refresh_stake() {
     }
 }
 
+function refresh_blocks() {
+    var blockcount = rdd.blockcount();
+
+    var obj = {blockcount: blockcount};
+
+    if(Blocks.findOne()) {
+        Blocks.update({}, obj);
+    } else {
+        Blocks.insert(obj);
+    }
+}
+
 function refresh_transactions() {
     var transactions = rdd.transactions();
 
@@ -44,5 +58,13 @@ function refresh_transactions() {
 Meteor.methods({
     validate_address: function(address) {
         return rdd.validate(address);
+    },
+
+    get_block_hash: function(num) {
+        return rdd.blockhash(num);
+    },
+
+    get_block: function(hash) {
+        return rdd.block(hash);
     }
 })

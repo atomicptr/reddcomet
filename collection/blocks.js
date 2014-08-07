@@ -1,0 +1,1 @@
+Blocks = new Meteor.Collection("blocks");
