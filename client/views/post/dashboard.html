@@ -3,7 +3,9 @@
     <div class="row">
         <div class="col-md-8">
             <div class="panel panel-primary">
-                <div class="panel-heading">Wallet <span class="{{islocked}}"></span></div>
+                <div class="panel-heading">
+                    Wallet {{#if islocked}}<span class="glyphicon glyphicon-lock"></span>{{/if}}
+                </div>
 
                 <table class="table table-striped">
                     <tbody>
@@ -24,14 +26,27 @@
             </div>
         </div>
 
-        <!-- ??? panel -->
+        <!-- info panel -->
         <div class="col-md-4">
             <div class="panel panel-primary">
-                <div class="panel-heading">Panel</div>
+                <div class="panel-heading">Info</div>
 
-                <div class="panel-body">
-                    <p>fancy graph here</p>
-                </div>
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <td>Staking</td><td><span class="{{isstaking}}"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Next stake in</td><td>{{staketime}}</td>
+                        </tr>
+                        <tr>
+                            <td>Balance in USD</td><td>{{usd_balance}}</td>
+                        </tr>
+                        <tr>
+                            <td>Satoshi/RDD</td><td>{{satoshi}}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>

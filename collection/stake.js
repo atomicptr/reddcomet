@@ -1,0 +1,1 @@
+Stake = new Meteor.Collection("stake");

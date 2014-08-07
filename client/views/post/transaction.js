@@ -1,10 +1,14 @@
 Template.transaction.helpers({
     confirmedcss: function() {
-        if(this.confirmations > 3) {
+        if(this.confirmations >= 3) {
             return "glyphicon-ok confirmed";
         } else {
             return "glyphicon-remove unconfirmed";
         }
+    },
+
+    confirmations: function() {
+        return this.confirmations;
     },
 
     typetext: function() {
@@ -23,7 +27,7 @@ Template.transaction.helpers({
 
             var vaddress = Session.get('vaddress_' + this.address);
 
-            if(vaddress.account) {
+            if(vaddress && vaddress.account) {
                 return vaddress.account;
             }
         }

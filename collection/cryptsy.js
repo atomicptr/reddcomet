@@ -1,0 +1,1 @@
+Cryptsy = new Meteor.Collection("cryptsy");
