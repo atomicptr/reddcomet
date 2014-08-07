@@ -44,6 +44,6 @@ Template.transaction.helpers({
     },
 
     date: function() {
-        return new Date(this.time * 1000);
+        return display_date(new Date(this.time * 1000));
     }
 });
