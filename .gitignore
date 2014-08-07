@@ -1,0 +1,5 @@
+packages
+.meteor
+*.lock
+server/config.js
+.DS_Store
