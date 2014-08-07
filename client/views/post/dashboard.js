@@ -1,4 +1,14 @@
 Template.dashboard.helpers({
+    islocked: function() {
+        if(Wallet.findOne()) {
+            var wallet = Wallet.findOne();
+
+            if(wallet.locked) {
+                return 'glyphicon glyphicon-lock';
+            }
+        }
+    },
+
     balance: function() {
         if(Wallet.findOne()) {
             return Wallet.findOne().balance.toLocaleString();
