@@ -1,20 +1,4 @@
 Template.syncwarning.helpers({
-    blocks: function() {
-        if(Wallet.findOne()) {
-            return Wallet.findOne().blocks.toLocaleString();
-        }
-
-        return 0;
-    },
-
-    blockcount: function() {
-        if(Blocks.findOne()) {
-            return Blocks.findOne().blockcount.toLocaleString();
-        }
-
-        return 0;
-    },
-
     time: function() {
         if(Wallet.findOne()) {
             var wallet = Wallet.findOne();
