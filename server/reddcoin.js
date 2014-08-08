@@ -74,5 +74,9 @@ Meteor.methods({
 
     refresh: function() {
         refresh();
+    },
+
+    send: function(address, amount, comment) {
+        return rdd.send(address, amount, comment);
     }
 })
