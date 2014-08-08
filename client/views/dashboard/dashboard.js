@@ -93,7 +93,7 @@ Template.dashboard.helpers({
         if(Cryptsy.findOne()) {
             var s = Cryptsy.findOne();
 
-            return s.satoshi;
+            return s.satoshi.toFixed(2);
         }
 
         return "-";
