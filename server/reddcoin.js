@@ -51,6 +51,8 @@ function refresh_transactions() {
 
         if(!trans) {
             Transaction.insert(transaction);
+        } else {
+            Transaction.update({txid: transaction.txid}, transaction);
         }
     });
 }
