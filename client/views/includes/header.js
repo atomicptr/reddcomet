@@ -1,12 +1,6 @@
 Template.header.helpers({
     islocked: function() {
-        if(Wallet.findOne()) {
-            var wallet = Wallet.findOne();
-
-            return wallet.locked;
-        }
-
-        return true;
+        return islocked();
     }
 });
 
