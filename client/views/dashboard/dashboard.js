@@ -59,6 +59,10 @@ Template.dashboard.helpers({
         if(Stake.findOne()) {
             var stake = Stake.findOne();
 
+            if(!stake.staking) {
+                return "-";
+            }
+
             var network_weight = stake.netstakeweight;
             var total_weight = stake.totalweight;
 
