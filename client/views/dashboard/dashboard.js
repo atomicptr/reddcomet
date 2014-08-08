@@ -107,5 +107,9 @@ Template.dashboard.helpers({
 
     transactions: function() {
         return Transaction.find({}, {sort: {time: -1}, limit: 10});
+    },
+
+    hastransactions: function() {
+        return Transaction.find().count() > 0;
     }
 });
