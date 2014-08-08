@@ -18,11 +18,14 @@ Template.header.events({
 
         if(!isNaN(timeout)) {
             Meteor.call("unlock", passphrase, Number(timeout), stakeonly, function(err, done) {
-                console.log(done);
-
-                Meteor.call("refresh", function() {
-                    $('#unlock-modal').modal('hide');
-                });
+                if(done.code) {
+                    $("#unlock-passphrase").parent().attr("class", "has-error has-feedback");
+                    $("#unlock-passphrase").parent().append('<span class="glyphicon glyphicon-remove form-control-feedback"></span>');
+                } else {
+                    Meteor.call("refresh", function() {
+                        $('#unlock-modal').modal('hide');
+                    });
+                }
             });
         } else {
             $("#unlock-timeout").parent().attr("class", "has-error has-feedback");
