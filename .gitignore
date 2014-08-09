@@ -3,3 +3,4 @@ packages
 *.lock
 server/lib/config.js
 .DS_Store
+*.tar.gz
