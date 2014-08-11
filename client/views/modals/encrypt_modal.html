@@ -1,0 +1,27 @@
+<template name="encrypt_modal">
+    <div class="modal fade" id="encrypt-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">Encrypt wallet</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label class="control-label" for="encrypt-passphrase">Passphrase</label>
+                        <input id="encrypt-passphrase" class="form-control" type="password" />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label" for="encrypt-passphrase">Enter again</label>
+                        <input id="encrypt-passphrase-retype" class="form-control" type="password" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" id="encrypt-btn" class="btn btn-primary">Unlock</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

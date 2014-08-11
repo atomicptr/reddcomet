@@ -80,5 +80,9 @@ Meteor.methods({
 
     send: function(address, amount, comment) {
         return rdd.send(address, amount, comment);
+    },
+
+    encrypt: function(passphrase) {
+        return rdd.encryptwallet(passphrase);
     }
 })

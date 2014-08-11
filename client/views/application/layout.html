@@ -7,7 +7,14 @@
                 {{>syncwarning}}
             {{/if}}
 
+            {{#if notencrypted}}
+                {{>encryptedwarning}}
+            {{/if}}
+
             {{>yield}}
         </div>
     </div>
+
+    {{>unlock_modal}}
+    {{>encrypt_modal}}
 </template>
