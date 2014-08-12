@@ -84,5 +84,9 @@ Meteor.methods({
 
     encrypt: function(passphrase) {
         return rdd.encryptwallet(passphrase);
+    },
+
+    lockwallet: function() {
+        return rdd.lock();
     }
 })
