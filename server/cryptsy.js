@@ -1,4 +1,7 @@
+var Future = Npm.require("fibers/future");
+
 refresh_cryptsy();
+
 Meteor.setInterval(function() {
     refresh_cryptsy();
 }, 30000);
@@ -18,7 +21,23 @@ function refresh_cryptsy() {
 }
 
 function get_satoshi() {
-    var data = HTTP.get("http://pubapi.cryptsy.com/api.php?method=singlemarketdata&marketid=169");
+    var future = new Future();
+
+    HTTP.get("http://pubapi.cryptsy.com/api.php?method=singlemarketdata&marketid=169", function(err, done) {
+        if(err) {
+            console.log(err);
+
+            future.return({error: true, err: err});
+        } else {
+            future.return(done);
+        }
+    });
+
+    var data = future.wait();
+
+    if(data.error) {
+        return null;
+    }
 
     var json = JSON.parse(data.content);
 
@@ -28,7 +47,23 @@ function get_satoshi() {
 }
 
 function get_usd() {
-    var data = HTTP.get("http://pubapi.cryptsy.com/api.php?method=singlemarketdata&marketid=262");
+    var future = new Future();
+
+    HTTP.get("http://pubapi.cryptsy.com/api.php?method=singlemarketdata&marketid=262", function(err, done) {
+        if(err) {
+            console.log(err);
+
+            future.return({error: true, err: err});
+        } else {
+            future.return(done);
+        }
+    });
+
+    var data = future.wait();
+
+    if(data.error) {
+        return null;
+    }
 
     var json = JSON.parse(data.content);
 

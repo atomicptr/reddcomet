@@ -81,6 +81,10 @@ Template.dashboard.helpers({
             var s = Cryptsy.findOne();
             var wallet = Wallet.findOne();
 
+            if(!s.usd) {
+                return "-";
+            }
+
             var balance = (wallet.balance + wallet.unconfirmedbalance);
 
             return "$ " + Number(s.usd * balance, 2).toFixed(2);
@@ -93,10 +97,26 @@ Template.dashboard.helpers({
         if(Cryptsy.findOne()) {
             var s = Cryptsy.findOne();
 
+            if(!s.satoshi) {
+                return "-";
+            }
+
             return s.satoshi.toFixed(2);
         }
 
         return "-";
+    },
+
+    has_cryptsy_error: function() {
+        if(Cryptsy.findOne()) {
+            var s = Cryptsy.findOne();
+
+            if(!s.usd || !s.satoshi) {
+                return true;
+            }
+        }
+
+        return false;
     },
 
     transactions: function() {

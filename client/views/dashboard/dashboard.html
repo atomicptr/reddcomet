@@ -1,5 +1,9 @@
 <template name="dashboard">
     <!-- wallet panel -->
+    {{#if has_cryptsy_error}}
+        {{>cryptsy_error}}
+    {{/if}}
+
     <div class="row">
         <div class="col-md-8">
             <div class="panel panel-primary">
