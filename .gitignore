@@ -1,6 +1,5 @@
 packages
 .meteor
 *.lock
-server/lib/config.js
 .DS_Store
 *.tar.gz
