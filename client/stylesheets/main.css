@@ -53,3 +53,7 @@ body {
 #unlock-table td {
     padding: 5px;
 }
+
+.about-table {
+    font-size: 18px;
+}

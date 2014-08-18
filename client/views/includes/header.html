@@ -28,20 +28,20 @@
                             <button class="btn btn-default navbar-btn" data-toggle="modal" data-target="#unlock-modal"><span class="glyphicon glyphicon-lock"></span> Unlock wallet</button>
                         {{/if}}
                     </li>
-                    {{#if islocked}}
-                    {{else}}
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <!--<li><a href="#">Action</a></li>-->
-                                {{#if islocked}}
-                                {{else}}
-                                    <!--<li class="divider"></li>-->
-                                    <li><a id="lockwallet-btn"><span class="glyphicon glyphicon-lock"></span> Lock wallet</a></li>
-                                {{/if}}
-                            </ul>
-                        </li>
-                    {{/if}}
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <!--<li><a href="#">Action</a></li>-->
+                            {{#if islocked}}
+                            {{else}}
+                                <li><a id="lockwallet-btn"><span class="glyphicon glyphicon-lock"></span> Lock wallet</a></li>
+
+                                <li class="divider"></li>
+                            {{/if}}
+                            <li><a data-toggle="modal" data-target="#donate-modal"><span class="glyphicon glyphicon-heart"></span> Donate</a></li>
+                            <li><a data-toggle="modal" data-target="#about-modal"><span class="glyphicon glyphicon-exclamation-sign"></span> About</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>

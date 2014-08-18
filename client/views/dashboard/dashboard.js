@@ -69,7 +69,7 @@ Template.dashboard.helpers({
             } else if(estimated_time < 24 * 60 * 60) {
                 return Math.ceil(estimated_time / (60 * 60)) + " hour(s)";
             } else {
-                return Math.ceil(estimated_time / (60 * 60 * 24)) + " day(s)";
+                return Math.ceil(estimated_time / (60 * 60 * 24)).toLocaleString() + " day(s)";
             }
         }
 

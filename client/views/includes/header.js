@@ -16,5 +16,13 @@ Template.header.events({
             console.log(done);
             Meteor.call("refresh", function() {});
         })
-    }
+    },
+
+/*    "click #donate-btn": function() {
+
+    },
+
+    "click #about-btn": function() {
+
+    }*/
 });
