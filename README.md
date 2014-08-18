@@ -1,7 +1,7 @@
-wallet (work name)
+reddcomet
 ----------------
 
-[Meteor](http://meteor.com) based reddcoin wallet.
+reddcomet is a [Meteor](http://meteor.com) based reddcoin wallet.
 
 ## Dependency
 
