@@ -39,6 +39,9 @@ function validate_send_amount() {
 }
 
 Template.send.helpers({
+    to_address: function() {
+        return this.to ? this.to : "";
+    }
 });
 
 Template.send.events({
