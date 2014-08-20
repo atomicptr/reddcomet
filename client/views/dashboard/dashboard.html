@@ -60,24 +60,26 @@
             <div class="panel panel-primary">
                 <div class="panel-heading">Transactions</div>
 
-                {{#if hastransactions}}
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>&nbsp;</th><th>Type</th><th>Address</th><th>Amount</th><th>Date</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {{#each transactions}}
-                                {{> transaction}}
-                            {{/each}}
-                        </tbody>
-                    </table>
-                {{else}}
-                    <div class="panel-body">
-                        <h6>No transactions found.</h6>
-                    </div>
-                {{/if}}
+                <div class="table-responsive">
+                    {{#if hastransactions}}
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>&nbsp;</th><th>Type</th><th>Address</th><th>Amount</th><th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each transactions}}
+                                    {{> transaction}}
+                                {{/each}}
+                            </tbody>
+                        </table>
+                    {{else}}
+                        <div class="panel-body">
+                            <h6>No transactions found.</h6>
+                        </div>
+                    {{/if}}
+                </div>
             </div>
         </div>
     </div>
