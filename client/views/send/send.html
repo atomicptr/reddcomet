@@ -1,28 +1,32 @@
 <template name="send">
-    <div class="panel panel-primary">
-        <div class="panel-heading">
-            Send
+    {{#if islocked}}
+        {{>please_unlock_wallet}}
+    {{else}}
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                Send
+            </div>
+
+            <div class="panel-body">
+                <div class="form-group">
+                    <label for="send-address">Address</label>
+                    <input id="send-address" type="text" class="form-control" placeholder="Address" value="{{to_address}}" />
+                </div>
+
+                <div class="form-group">
+                    <label for="send-amount">Amount</label>
+                    <input id="send-amount" type="text" class="form-control" placeholder="5000 (in RDD)" />
+                </div>
+
+                <div class="form-group">
+                    <label for="send-comment">Comment</label>
+                    <input id="send-comment" type="text" class="form-control" placeholder="Comment" />
+                </div>
+
+                <div class="pull-right">
+                    <button id="send-btn" class="btn btn-primary">Send!</button>
+                </div>
+            </div>
         </div>
-
-        <div class="panel-body">
-            <div class="form-group">
-                <label for="send-address">Address</label>
-                <input id="send-address" type="text" class="form-control" placeholder="Address" value="{{to_address}}" />
-            </div>
-
-            <div class="form-group">
-                <label for="send-amount">Amount</label>
-                <input id="send-amount" type="text" class="form-control" placeholder="5000 (in RDD)" />
-            </div>
-
-            <div class="form-group">
-                <label for="send-comment">Comment</label>
-                <input id="send-comment" type="text" class="form-control" placeholder="Comment" />
-            </div>
-
-            <div class="pull-right">
-                <button id="send-btn" class="btn btn-primary">Send!</button>
-            </div>
-        </div>
-    </div>
+    {{/if}}
 </template>

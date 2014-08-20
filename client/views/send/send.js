@@ -39,6 +39,10 @@ function validate_send_amount() {
 }
 
 Template.send.helpers({
+    islocked: function() {
+        return islocked();
+    },
+
     to_address: function() {
         return this.to ? this.to : "";
     }
