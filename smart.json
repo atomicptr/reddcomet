@@ -1,7 +1,8 @@
 {
   "packages": {
-    "iron-router": {},
+    "iron-router": "0.8.2",
     "meteor-reddcoin": {},
-    "bootstrap-3": {}
+    "bootstrap-3": {},
+    "reactive-table": {}
   }
 }
