@@ -1,5 +1,3 @@
 packages
-.meteor
-*.lock
 .DS_Store
 *.tar.gz
