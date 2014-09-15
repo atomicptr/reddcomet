@@ -24,7 +24,7 @@ Template.transactions.helpers({
                     label: "Type",
 
                     fn: function(value, object) {
-                        return object.category == "send" ? "Sent" : "Receive"
+                        return object.category;
                     }
                 },
                 {

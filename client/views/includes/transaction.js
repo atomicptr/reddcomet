@@ -12,7 +12,7 @@ Template.transaction.helpers({
     },
 
     typetext: function() {
-        return this.category == "send" ? "Sent" : "Receive";
+        return this.category;
     },
 
     address: function() {
