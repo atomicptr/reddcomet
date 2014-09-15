@@ -94,6 +94,11 @@ body {
     font-weight: bold;
 }
 
+.orphan, .immature {
+    color: purple;
+    font-weight: bold;
+}
+
 #unlock-table td {
     padding: 5px;
 }
