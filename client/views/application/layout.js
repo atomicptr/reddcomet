@@ -32,7 +32,15 @@ Template.layout.helpers({
         return false;
     },
 
+    norddconnection: function() {
+        return !is_reddcoind_available();
+    },
+
     notencrypted: function() {
+        if(!is_reddcoind_available()) {
+            return false;
+        }
+
         if(Wallet.findOne()) {
             var wallet = Wallet.findOne();
 

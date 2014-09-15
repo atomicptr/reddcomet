@@ -1,4 +1,8 @@
 function islocked() {
+    if(!is_reddcoind_available()) {
+        return true;
+    }
+
     if(Wallet.findOne()) {
         var wallet = Wallet.findOne();
 

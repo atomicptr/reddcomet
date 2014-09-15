@@ -24,8 +24,10 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        {{#if islocked}}
-                            <button class="btn btn-default navbar-btn" data-toggle="modal" data-target="#unlock-modal"><span class="glyphicon glyphicon-lock"></span> Unlock wallet</button>
+                        {{#if rddconnection_available}}
+                            {{#if islocked}}
+                                <button class="btn btn-default navbar-btn" data-toggle="modal" data-target="#unlock-modal"><span class="glyphicon glyphicon-lock"></span> Unlock wallet</button>
+                            {{/if}}
                         {{/if}}
                     </li>
                     <li class="dropdown">

@@ -4,37 +4,39 @@ Template.dashboard.helpers({
     },
 
     balance: function() {
-        if(Wallet.findOne()) {
-            return Wallet.findOne().balance.toLocaleString();
+        var wallet = Wallet.findOne();
+        if(wallet && wallet.balance) {
+            return wallet.balance.toLocaleString();
         }
 
-        return "...";
+        return "-";
     },
 
     stake: function() {
-        if(Wallet.findOne()) {
-            return Wallet.findOne().stake.toLocaleString();
+        var wallet = Wallet.findOne();
+        if(wallet && wallet.stake) {
+            return wallet.stake.toLocaleString();
         }
 
-        return "...";
+        return "-";
     },
 
     unconfirmed_balance: function() {
-        if(Wallet.findOne()) {
-            return Wallet.findOne().unconfirmedbalance.toLocaleString();
+        var wallet = Wallet.findOne();
+        if(wallet && wallet.unconfirmedbalance) {
+            return wallet.unconfirmedbalance.toLocaleString();
         }
 
-        return "...";
+        return "-";
     },
 
     total_balance: function() {
-        if(Wallet.findOne()) {
-            var info = Wallet.findOne();
-
-            return Number(info.balance + info.unconfirmedbalance).toLocaleString();
+        var wallet = Wallet.findOne();
+        if(wallet && wallet.balance) {
+            return Number(wallet.balance + wallet.unconfirmedbalance).toLocaleString();
         }
 
-        return "...";
+        return "-";
     },
 
     isstaking: function() {

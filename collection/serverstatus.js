@@ -1,0 +1,1 @@
+ServerStatus = new Meteor.Collection("serverstatus");

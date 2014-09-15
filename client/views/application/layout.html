@@ -11,6 +11,10 @@
                 {{>encryptedwarning}}
             {{/if}}
 
+            {{#if norddconnection}}
+                {{>norddconn_error}}
+            {{/if}}
+
             {{>yield}}
         </div>
     </div>

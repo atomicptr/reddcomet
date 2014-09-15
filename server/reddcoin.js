@@ -9,10 +9,16 @@ refresh();
 Meteor.setInterval(refresh, 5000);
 
 function refresh() {
-    refresh_wallet_collection();
-    refresh_stake();
-    refresh_blocks();
-    refresh_transactions();
+    try {
+        refresh_wallet_collection();
+        refresh_stake();
+        refresh_blocks();
+        refresh_transactions();
+
+        server_status({rddconnection: true});
+    } catch(ex) {
+        server_status({rddconnection: false});
+    }
 }
 
 function refresh_wallet_collection() {

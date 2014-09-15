@@ -7,6 +7,10 @@ Template.header.helpers({
         var current_route = Router.current();
 
         return current_route && template === current_route.lookupTemplate() ? 'active' : '';
+    },
+
+    rddconnection_available: function() {
+        return is_reddcoind_available();
     }
 });
 
@@ -17,12 +21,4 @@ Template.header.events({
             Meteor.call("refresh", function() {});
         })
     },
-
-/*    "click #donate-btn": function() {
-
-    },
-
-    "click #about-btn": function() {
-
-    }*/
 });
